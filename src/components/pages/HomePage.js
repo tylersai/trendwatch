@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import { Divider, List, Card, Typography, Tooltip } from "antd";
 import { HeartOutlined, PlayCircleOutlined, DownloadOutlined } from "@ant-design/icons";
 import './HomePage.css';
@@ -7,6 +8,8 @@ import axios from "axios";
 import { POSTER_PATH } from "../../utils/constant";
 
 const HomePage = () => {
+
+  const history = useHistory();
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
@@ -45,6 +48,8 @@ const HomePage = () => {
     fetchData();
   }, []);
 
+  const cardClicked = id => history.push(`/movie/${id}`);
+
   return (
     <div className="HomePage Page">
       <h1>Discover New Movies</h1>
@@ -61,6 +66,7 @@ const HomePage = () => {
               cover={<img className="poster" alt="POSTER" src={POSTER_PATH + item.poster_path} />}
               bodyStyle={{padding: "12px 8px"}}
               actions={actionIcons}
+              onClick={() => cardClicked(item.id)}
               >
                 <Card.Meta 
                 title={<Tooltip placement="topLeft" color="blue" title={item.title}>{item.title}</Tooltip>}
