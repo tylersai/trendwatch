@@ -1,12 +1,18 @@
 import React from 'react';
-import { Button } from "antd";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
+
+import HomePage from './components/pages/HomePage';
 
 function App() {
   return (
     <div className="App">
-      <h2>Hello World</h2>
-      <Button type="primary">Click Me</Button>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/home" component={HomePage}/>
+        </Switch>
+      </Router>
     </div>
   );
 }
