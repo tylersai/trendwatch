@@ -1,0 +1,12 @@
+.MoviePage {
+  padding-top: 10px !important;
+}
+
+.MoviePage .movie-page-header {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.MoviePage .movie-page-header .ant-page-header-back {
+  font-size: 20px;
+}
