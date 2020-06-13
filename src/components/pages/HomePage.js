@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Divider, List, Card, Typography } from "antd";
+import { Divider, List, Card, Typography, Tooltip } from "antd";
 import { HeartOutlined, PlayCircleOutlined, DownloadOutlined } from "@ant-design/icons";
 import './HomePage.css';
 
@@ -63,7 +63,7 @@ function HomePage() {
               actions={actionIcons}
               >
                 <Card.Meta 
-                title={item.title}
+                title={<Tooltip placement="topLeft" color="blue" title={item.title}>{item.title}</Tooltip>}
                 description={
                   <Paragraph ellipsis={{ rows: 4 }} style={{fontSize:"0.75rem"}}>
                     {item.overview}
