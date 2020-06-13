@@ -11,3 +11,7 @@
 .HomePage .custom-card:hover {
   border-color: #177ddc;
 }
+
+img.poster {
+  margin: auto;
+}

@@ -13,7 +13,7 @@ function HomePage() {
 
   const { Paragraph } = Typography;
   const gridOptions = {
-    gutter: 16,
+    gutter: 24,
     xs: 2,
     sm: 3,
     md: 4,
