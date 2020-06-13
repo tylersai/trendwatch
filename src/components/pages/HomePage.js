@@ -23,7 +23,7 @@ function HomePage() {
   }, []);
 
   return (
-    <div className="HomePage">
+    <div className="HomePage Page">
       <h2>Hello World</h2>
       <Button type="primary">Click Me</Button>
       <h3>{data.length}</h3>

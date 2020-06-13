@@ -3,3 +3,7 @@
 .App {
   text-align: center;
 }
+
+.App .Page {
+  padding: 30px 4vw 10px 4vw;
+}
