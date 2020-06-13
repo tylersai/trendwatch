@@ -6,7 +6,7 @@ import './HomePage.css';
 import axios from "axios";
 import { POSTER_PATH } from "../../utils/constant";
 
-function HomePage() {
+const HomePage = () => {
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
