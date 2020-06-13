@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Divider, List, Card, Typography, Tooltip } from "antd";
+import { Typography, Skeleton } from "antd";
 import './MoviePage.css';
 
 import axios from "axios";
@@ -32,16 +32,13 @@ const MoviePage = ({match}) => {
 
   return (
     <div className="MoviePage Page">
-      {
-        loading ? null:
-        (
-          <>
-            <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />
-            <h2>{movie.title}</h2>
-            <Paragraph>{movie.overview}</Paragraph>
-          </>
-        )
-      }
+      <Skeleton loading={loading} avatar={{style:{borderRadius: "10px", width: "100px", height: "100px"}, shape:"square"}} round active>
+        
+        <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />
+        <br/>
+        <h2>{movie.title}</h2>
+        <Paragraph>{movie.overview}</Paragraph>
+      </Skeleton>
     </div>
   );
 }
