@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Divider, List, Card } from "antd";
+import { Divider, List, Card, Typography } from "antd";
 import { HeartOutlined, PlayCircleOutlined, DownloadOutlined } from "@ant-design/icons";
 import './HomePage.css';
 
@@ -11,14 +11,15 @@ function HomePage() {
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
+  const { Paragraph } = Typography;
   const gridOptions = {
     gutter: 16,
-    xs: 1,
-    sm: 2,
+    xs: 2,
+    sm: 3,
     md: 4,
-    lg: 4,
+    lg: 5,
     xl: 6,
-    xxl: 3,
+    xxl: 7,
   };
   const actionIcons = [
     <HeartOutlined key="favourite" />,
@@ -55,11 +56,19 @@ function HomePage() {
         renderItem={item => (
           <List.Item>
             <Card
+              hoverable
+              className="custom-card"
               cover={<img className="poster" alt="POSTER" src={POSTER_PATH + item.poster_path} />}
               bodyStyle={{padding: "12px 8px"}}
               actions={actionIcons}
               >
-                <Card.Meta title={item.title} />
+                <Card.Meta 
+                title={item.title}
+                description={
+                  <Paragraph ellipsis={{ rows: 4 }} style={{fontSize:"0.75rem"}}>
+                    {item.overview}
+                  </Paragraph>} 
+                  />
             </Card>
           </List.Item>
         )}

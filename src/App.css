@@ -1,9 +1,5 @@
 @import '~antd/dist/antd.dark.css';
 
-.App {
-  
-}
-
 .App .Page {
   padding: 30px 4vw 10px 4vw;
 }

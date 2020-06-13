@@ -2,3 +2,12 @@
   margin-left: 0;
   margin-right: 0;
 }
+
+.HomePage .custom-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.HomePage .custom-card:hover {
+  border-color: #177ddc;
+}
