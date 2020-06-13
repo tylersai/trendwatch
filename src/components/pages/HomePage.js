@@ -30,7 +30,7 @@ function HomePage() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const res = await axios.get("/trending/movie/week");
+      const res = await axios.get("/trending/movie/day");
       console.log(res.data);
       setLoading(false);
       setData(res.data.results);
@@ -47,7 +47,7 @@ function HomePage() {
 
   return (
     <div className="HomePage Page">
-      <h2>Movies</h2>
+      <h1>Discover New Movies</h1>
       <Divider orientation="center">Trending</Divider>
       <List
         loading={loading}
