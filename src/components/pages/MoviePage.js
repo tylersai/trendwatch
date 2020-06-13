@@ -38,7 +38,11 @@ const MoviePage = ({match}) => {
 
   return (
     <div className="MoviePage Page">
-      <Skeleton loading={loading} avatar={{style:{borderRadius: "10px", width: "100px", height: "100px"}, shape:"square"}} round active>
+      <Skeleton
+        className="custom-skeleton"
+        loading={loading}
+        avatar={{style:{borderRadius: "10px", width: "90px", height: "90px"}, shape:"square"}}
+        round active>
         <PageHeader
           className="movie-page-header"
           title={movie.title}
