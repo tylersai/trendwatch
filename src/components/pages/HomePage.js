@@ -24,10 +24,13 @@ const HomePage = () => {
     xl: 6,
     xxl: 7,
   };
+
+  const stopOnActionIconClick = e => e.stopPropagation();
+
   const actionIcons = [
-    <HeartOutlined key="favourite" />,
-    <PlayCircleOutlined key="play" />,
-    <DownloadOutlined key="download" />,
+    <HeartOutlined key="favourite" onClick={stopOnActionIconClick} />,
+    <PlayCircleOutlined key="play" onClick={stopOnActionIconClick} />,
+    <DownloadOutlined key="download" onClick={stopOnActionIconClick} />,
   ];
 
   const fetchData = async () => {
