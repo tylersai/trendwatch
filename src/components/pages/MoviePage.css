@@ -15,3 +15,33 @@
 .MoviePage .custom-skeleton {
   margin-top: 20px;
 }
+
+.d-flex {
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+.d-flex > * {
+  padding: 5px;
+}
+
+.d-flex img.poster {
+  margin: 0 auto;
+}
+
+@media (min-width:320px)  {
+  .d-flex {
+    flex-direction: column;
+  }
+}
+@media (min-width:481px)  {
+  .d-flex {
+    flex-direction: column;
+  }
+}
+@media (min-width:641px)  {
+  .d-flex {
+    flex-direction: row;
+  }
+}

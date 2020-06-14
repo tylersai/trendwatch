@@ -21,10 +21,12 @@ const MoviePage = ({match}) => {
     try {
       const res = await axios.get(`/movie/${id}`);
       console.log(res.data);
+      document.title = res.data.title;
       setLoading(false);
       setMovie(res.data);
     } catch (error) {
       console.log(error);
+      document.title = "Movies";
       setLoading(false);
       setMovie({});
     }   
@@ -49,10 +51,16 @@ const MoviePage = ({match}) => {
           backIcon={<LeftOutlined />}
           onBack={goBack}
           />
-        <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />
-        <br />
-        <br />
-        <Paragraph>{movie.overview}</Paragraph>
+        
+        <div className="d-flex">
+          <div className="img-container">
+            {movie.poster_path && <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />}
+          </div>
+          <div className="desc-container">
+            <Paragraph>{movie.overview}</Paragraph>
+          </div>
+        </div>
+        
       </Skeleton>
     </div>
   );
