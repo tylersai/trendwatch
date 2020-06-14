@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { PageHeader, Typography, Skeleton, Divider } from "antd";
-import { LeftOutlined, EditOutlined, FieldNumberOutlined, UnorderedListOutlined } from "@ant-design/icons";
+import { PageHeader, Typography, Skeleton, Divider, Descriptions, Badge } from "antd";
+import { LeftOutlined, EditOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import './MoviePage.css';
 
 import axios from "axios";
-import { POSTER_PATH } from "../../utils/constant";
+import { POSTER_PATH, minsToString } from "../../utils/constant";
 
 const MoviePage = ({match}) => {
 
@@ -14,7 +14,7 @@ const MoviePage = ({match}) => {
   const [loading, setLoading] = useState(false);
   const [movie, setMovie] = useState({});
 
-  const { Paragraph } = Typography;
+  const { Paragraph, Text } = Typography;
 
   const fetchData = async (id) => {
     setLoading(true);
@@ -64,6 +64,14 @@ const MoviePage = ({match}) => {
         </div>
         
         <Divider><UnorderedListOutlined/> Details</Divider>
+        <Descriptions>
+          {movie.original_title && <Descriptions.Item label="Original Title">{movie.original_title}</Descriptions.Item>}
+          {movie.release_date && <Descriptions.Item label="Release Date">{movie.release_date}</Descriptions.Item>}
+          {movie.status && <Descriptions.Item label="Status">
+              <Text code><Badge status={movie.status === "Released" ? "success":"warning"} text={movie.status}></Badge></Text>
+            </Descriptions.Item>}
+          {movie.runtime && <Descriptions.Item label="Runtime">{minsToString(movie.runtime)}</Descriptions.Item>}
+        </Descriptions>
         
       </Skeleton>
     </div>
