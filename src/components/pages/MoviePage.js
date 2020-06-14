@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { PageHeader, Typography, Skeleton } from "antd";
-import { LeftOutlined } from "@ant-design/icons";
+import { PageHeader, Typography, Skeleton, Divider } from "antd";
+import { LeftOutlined, EditOutlined, FieldNumberOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import './MoviePage.css';
 
 import axios from "axios";
@@ -53,13 +53,17 @@ const MoviePage = ({match}) => {
           />
         
         <div className="d-flex">
-          <div className="img-container">
+          <div className="img-container" style={{paddingRight: "3vw"}}>
             {movie.poster_path && <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />}
           </div>
           <div className="desc-container">
+            <Divider><EditOutlined/> Overview</Divider>
+            <h3>{movie.title}</h3>
             <Paragraph>{movie.overview}</Paragraph>
           </div>
         </div>
+        
+        <Divider><UnorderedListOutlined/> Details</Divider>
         
       </Skeleton>
     </div>
