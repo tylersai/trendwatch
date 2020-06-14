@@ -31,8 +31,17 @@
   display: block;
 }
 
+.d-flex .desc-container .movie-title {
+  letter-spacing: 1px;
+}
+
 .d-flex .desc-container .ant-typography {
   margin-top: 1em;
+}
+
+.d-flex .desc-container .vote-count {
+  display: inline-block;
+  padding: 0 14px;
 }
 
 .MoviePage .movie-detail {

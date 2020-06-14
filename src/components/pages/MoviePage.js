@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { PageHeader, Typography, Skeleton, Divider, Descriptions, Badge, Rate } from "antd";
+import { PageHeader, Typography, Skeleton, Divider, Descriptions, Badge, Rate, Empty } from "antd";
 import { LeftOutlined, EditOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import './MoviePage.css';
 
@@ -51,37 +51,46 @@ const MoviePage = ({match}) => {
             height: "90px"},
           shape:"square"}}
         round active>
-        <PageHeader
-          className="movie-page-header"
-          title={movie.title}
-          backIcon={<LeftOutlined />}
-          onBack={goBack}
-          />
-        
-        <div className="d-flex">
-          <div className="img-container" style={{paddingRight: "3vw"}}>
-            {movie.poster_path && <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />}
-          </div>
-          <div className="desc-container">
-            <Divider><EditOutlined/> Overview</Divider>
-            <h3>{movie.title}</h3>
-            <Rate disabled allowHalf value={movie.vote_average ? Math.round(movie.vote_average)/2:0} />
-            <Paragraph>{movie.overview}</Paragraph>
-          </div>
-        </div>
-        
-        <Divider><UnorderedListOutlined/> Details</Divider>
-        <Descriptions className="movie-detail">
-          {movie.original_title && <Descriptions.Item label="Original Title">{movie.original_title}</Descriptions.Item>}
-          {movie.status && <Descriptions.Item label="Status">
-              <Text code><Badge status={movie.status === "Released" ? "success":"warning"} text={movie.status}></Badge></Text>
-            </Descriptions.Item>}
-          {movie.release_date && <Descriptions.Item label="Release Date">{movie.release_date}</Descriptions.Item>}
-          {movie.runtime && <Descriptions.Item label="Runtime">{minsToString(movie.runtime)}</Descriptions.Item>}
-          {movie.popularity && <Descriptions.Item label="Popularity">
-              <Popularity>{movie.popularity}</Popularity>
-            </Descriptions.Item>}
-        </Descriptions>
+          {
+            movie.id ? (
+              <>
+                <PageHeader
+                  className="movie-page-header"
+                  title={movie.title}
+                  backIcon={<LeftOutlined />}
+                  onBack={goBack}
+                  />
+                
+                <div className="d-flex">
+                  <div className="img-container" style={{paddingRight: "3vw"}}>
+                    {movie.poster_path && <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />}
+                  </div>
+                  <div className="desc-container">
+                    <Divider><EditOutlined/> Overview</Divider>
+                    <h3 className="movie-title">{movie.title}</h3>
+                    <Rate disabled allowHalf value={movie.vote_average ? Math.round(movie.vote_average)/2:0} />
+                    <Text className="vote-count" type="secondary">{`(${movie.vote_count ? movie.vote_count:0})`}</Text>
+                    <Paragraph>{movie.overview}</Paragraph>
+                  </div>
+                </div>
+                
+                <Divider><UnorderedListOutlined/> Details</Divider>
+                <Descriptions className="movie-detail">
+                  {movie.original_title && <Descriptions.Item label="Original Title">{movie.original_title}</Descriptions.Item>}
+                  {movie.status && <Descriptions.Item label="Status">
+                      <Text code><Badge status={movie.status === "Released" ? "success":"warning"} text={movie.status}></Badge></Text>
+                    </Descriptions.Item>}
+                  {movie.release_date && <Descriptions.Item label="Release Date">{movie.release_date}</Descriptions.Item>}
+                  {movie.runtime && <Descriptions.Item label="Runtime">{minsToString(movie.runtime)}</Descriptions.Item>}
+                  {movie.popularity && <Descriptions.Item label="Popularity">
+                      <Popularity>{movie.popularity}</Popularity>
+                    </Descriptions.Item>}
+                </Descriptions>
+              </>
+            ):(
+              <Empty style={{marginTop:"25px"}} image={Empty.PRESENTED_IMAGE_DEFAULT} />
+            )
+          }
         
       </Skeleton>
     </div>
