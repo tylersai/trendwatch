@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { PageHeader, Typography, Skeleton, Divider, Descriptions, Badge } from "antd";
+import { PageHeader, Typography, Skeleton, Divider, Descriptions, Badge, Button } from "antd";
 import { LeftOutlined, EditOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import './MoviePage.css';
 
 import axios from "axios";
 import { POSTER_PATH, minsToString } from "../../utils/constant";
+import Popularity from '../ui/Popularity';
 
 const MoviePage = ({match}) => {
 
@@ -43,7 +44,12 @@ const MoviePage = ({match}) => {
       <Skeleton
         className="custom-skeleton"
         loading={loading}
-        avatar={{style:{borderRadius: "10px", width: "90px", height: "90px"}, shape:"square"}}
+        avatar={{style:{
+            borderRadius: "10px",
+            width: "90px",
+            marginTop: "10px",
+            height: "90px"},
+          shape:"square"}}
         round active>
         <PageHeader
           className="movie-page-header"
@@ -64,13 +70,16 @@ const MoviePage = ({match}) => {
         </div>
         
         <Divider><UnorderedListOutlined/> Details</Divider>
-        <Descriptions>
+        <Descriptions className="movie-detail">
           {movie.original_title && <Descriptions.Item label="Original Title">{movie.original_title}</Descriptions.Item>}
-          {movie.release_date && <Descriptions.Item label="Release Date">{movie.release_date}</Descriptions.Item>}
           {movie.status && <Descriptions.Item label="Status">
               <Text code><Badge status={movie.status === "Released" ? "success":"warning"} text={movie.status}></Badge></Text>
             </Descriptions.Item>}
+          {movie.release_date && <Descriptions.Item label="Release Date">{movie.release_date}</Descriptions.Item>}
           {movie.runtime && <Descriptions.Item label="Runtime">{minsToString(movie.runtime)}</Descriptions.Item>}
+          {movie.popularity && <Descriptions.Item label="Popularity">
+              <Popularity>{movie.popularity}</Popularity>
+            </Descriptions.Item>}
         </Descriptions>
         
       </Skeleton>

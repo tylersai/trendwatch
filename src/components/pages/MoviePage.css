@@ -31,6 +31,14 @@
   display: block;
 }
 
+.MoviePage .movie-detail {
+  padding: 0 3vw;
+}
+
+.MoviePage .Popularity {
+  transform: translate(0, 5px);
+}
+
 @media (min-width:320px)  {
   .d-flex {
     flex-direction: column;
