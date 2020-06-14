@@ -28,6 +28,7 @@
 
 .d-flex img.poster {
   margin: 0 auto;
+  display: block;
 }
 
 @media (min-width:320px)  {
