@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { PageHeader, Typography, Skeleton, Divider, Descriptions, Badge, Button } from "antd";
+import { PageHeader, Typography, Skeleton, Divider, Descriptions, Badge, Rate } from "antd";
 import { LeftOutlined, EditOutlined, UnorderedListOutlined } from "@ant-design/icons";
 import './MoviePage.css';
 
@@ -65,6 +65,7 @@ const MoviePage = ({match}) => {
           <div className="desc-container">
             <Divider><EditOutlined/> Overview</Divider>
             <h3>{movie.title}</h3>
+            <Rate disabled allowHalf value={movie.vote_average ? Math.round(movie.vote_average)/2:0} />
             <Paragraph>{movie.overview}</Paragraph>
           </div>
         </div>
