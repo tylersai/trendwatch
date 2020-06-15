@@ -9,7 +9,7 @@ const Popularity = ({ children }) => {
         <div className="Popularity bg">
             <div className="pop-wrap">
                 {
-                    [...Array(10).keys()].map((b,i) => <div key={i} className={i < num ? "bg-primary":"bg-secondary"}></div>)
+                    [...Array(10).keys()].map((b,i) => <div key={i} className={i < num ? "bg-primary-faded":"bg-secondary"}></div>)
                 }
             </div>
         </div>

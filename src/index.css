@@ -17,6 +17,10 @@ code {
   background-color: #096dd9;
 }
 
+.bg-primary-faded {
+  background-color: rgba(23, 126, 222, 0.65);
+}
+
 .bg-secondary {
   background-color: #313131;
 }
