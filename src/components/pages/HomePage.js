@@ -37,12 +37,10 @@ const HomePage = () => {
     setLoading(true);
     try {
       const res = await axios.get("/trending/movie/day");
-      console.log(res.data);
       setLoading(false);
       setData(res.data.results);
       document.title = "Movies \u2022 Trending";
     } catch (error) {
-      console.log(error);
       setLoading(false);
       setData([]);
       document.title = "Movies";

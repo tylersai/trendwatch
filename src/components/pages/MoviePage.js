@@ -21,12 +21,10 @@ const MoviePage = ({match}) => {
     setLoading(true);
     try {
       const res = await axios.get(`/movie/${id}`);
-      console.log(res.data);
       document.title = res.data.title;
       setLoading(false);
       setMovie(res.data);
     } catch (error) {
-      console.log(error);
       document.title = "Movies";
       setLoading(false);
       setMovie({});
