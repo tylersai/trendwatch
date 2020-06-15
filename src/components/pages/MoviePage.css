@@ -33,6 +33,7 @@
 
 .d-flex .desc-container .movie-title {
   letter-spacing: 1px;
+  margin-bottom: 0;
 }
 
 .d-flex .desc-container .ant-typography {
@@ -50,6 +51,10 @@
 
 .MoviePage .Popularity {
   transform: translate(0, 5px);
+}
+
+.MoviePage .ant-rate {
+  font-size: 16px;
 }
 
 @media (min-width:320px)  {

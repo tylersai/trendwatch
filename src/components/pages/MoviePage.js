@@ -53,7 +53,7 @@ const MoviePage = ({match}) => {
         round active>
           {
             movie.id ? (
-              <>
+              <div className="fade-in">
                 <PageHeader
                   className="movie-page-header"
                   title={movie.title}
@@ -86,7 +86,7 @@ const MoviePage = ({match}) => {
                       <Popularity>{movie.popularity}</Popularity>
                     </Descriptions.Item>}
                 </Descriptions>
-              </>
+              </div>
             ):(
               <Empty style={{marginTop:"25px"}} image={Empty.PRESENTED_IMAGE_DEFAULT} />
             )

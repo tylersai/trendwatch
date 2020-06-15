@@ -20,3 +20,16 @@ code {
 .bg-secondary {
   background-color: #313131;
 }
+
+.fade-in {
+  animation: fadeIn 200ms ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
