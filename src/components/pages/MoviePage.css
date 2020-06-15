@@ -16,6 +16,7 @@
 .MoviePage .movie-page-header .ant-page-header-heading-title {
   color: #177ddc;
   font-size: 18px;
+  cursor: default;
 }
 
 .MoviePage .custom-skeleton {
