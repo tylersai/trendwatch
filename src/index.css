@@ -21,6 +21,10 @@ code {
   background-color: #313131;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .fade-in {
   animation: fadeIn 200ms ease-out forwards;
 }

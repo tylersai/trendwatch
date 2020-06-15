@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { Divider, List, Card, Typography, Tooltip } from "antd";
-import { HeartOutlined, PlayCircleOutlined, DownloadOutlined } from "@ant-design/icons";
+import { HeartOutlined, PlayCircleOutlined, DownloadOutlined, RiseOutlined } from "@ant-design/icons";
 import './HomePage.css';
 
 import axios from "axios";
@@ -55,8 +55,8 @@ const HomePage = () => {
 
   return (
     <div className="HomePage Page">
-      <h1>Discover New Movies</h1>
-      <Divider orientation="center">Trending</Divider>
+      <h1 className="text-center">Discover New Movies</h1>
+      <Divider orientation="center"><RiseOutlined/> Trending</Divider>
       <List
         loading={loading}
         grid={gridOptions}
