@@ -5,5 +5,5 @@ module.exports = {
   ],
   "swDest": "build/sw.js",
   "swSrc": "src/sw.js",
-  "injectionPoint": "const precacheManifest = [];"
+  "injectionPoint": "[]/*TO_INJECT_HERE*/"
 };
