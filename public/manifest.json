@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Trend Watch",
+  "name": "Trend Watch Progressive Web App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,9 +8,54 @@
       "type": "image/x-icon"
     },
     {
+      "src": "logo48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "logo72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "logo76.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+    {
+      "src": "logo96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "logo120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "logo144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "logo152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "logo168.png",
+      "sizes": "168x168",
+      "type": "image/png"
+    },
+    {
       "src": "logo192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "logo256.png",
+      "type": "image/png",
+      "sizes": "256x256"
     },
     {
       "src": "logo512.png",
@@ -20,6 +65,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#177ddc",
+  "background_color": "#f0f2f4"
 }
