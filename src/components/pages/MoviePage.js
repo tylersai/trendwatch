@@ -25,7 +25,7 @@ const MoviePage = ({match}) => {
       setLoading(false);
       setMovie(res.data);
     } catch (error) {
-      document.title = "Movies";
+      document.title = "Trend Watch";
       setLoading(false);
       setMovie({});
     }   

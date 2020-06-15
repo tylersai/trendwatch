@@ -39,11 +39,11 @@ const HomePage = () => {
       const res = await axios.get("/trending/movie/day");
       setLoading(false);
       setData(res.data.results);
-      document.title = "Movies \u2022 Trending";
+      document.title = "Trend Watch \u2022 Trending Movies";
     } catch (error) {
       setLoading(false);
       setData([]);
-      document.title = "Movies";
+      document.title = "Trend Watch";
     }   
   };
 
