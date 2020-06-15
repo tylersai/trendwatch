@@ -61,7 +61,7 @@ const MoviePage = ({match}) => {
                 
                 <div className="d-flex">
                   <div className="img-container" style={{paddingRight: "3vw"}}>
-                    {movie.poster_path && <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} />}
+                    {movie.poster_path && <img className="poster" alt="POSTER" style={{maxHeight: "300px"}} src={POSTER_PATH + movie.poster_path} crossOrigin="anonymous" />}
                   </div>
                   <div className="desc-container">
                     <Divider><EditOutlined/> Overview</Divider>

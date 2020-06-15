@@ -66,7 +66,7 @@ const HomePage = () => {
             <Card
               hoverable
               className="custom-card"
-              cover={<img className="poster" alt="POSTER" src={POSTER_PATH + item.poster_path} />}
+              cover={<img className="poster" alt="POSTER" src={POSTER_PATH + item.poster_path} crossOrigin="anonymous" />}
               bodyStyle={{padding: "12px 8px"}}
               actions={actionIcons}
               onClick={() => cardClicked(item.id)}
