@@ -8,6 +8,8 @@
   color: #177ddc;
 }
 
+.HomePage .custom-card,
+.App .ant-card-actions,
 .App .ant-divider-horizontal.ant-divider-with-text::before,
 .App .ant-divider-horizontal.ant-divider-with-text::after {
   border-color: rgba(23, 126, 222, 0.4);
