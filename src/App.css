@@ -3,3 +3,12 @@
 .App .Page {
   padding: 25px 4vw 10px 4vw;
 }
+
+.App .ant-divider-horizontal.ant-divider-with-text {
+  color: #177ddc;
+}
+
+.App .ant-divider-horizontal.ant-divider-with-text::before,
+.App .ant-divider-horizontal.ant-divider-with-text::after {
+  border-color: rgba(23, 126, 222, 0.4);
+}
