@@ -15,3 +15,9 @@
 img.poster {
   margin: auto;
 }
+
+@media (hover: none) {
+  .HomePage .custom-card:hover {
+    border-color: rgba(23, 126, 222, 0.4);
+  }
+}

@@ -1,5 +1,5 @@
 .MoviePage {
-  padding-top: 10px !important;
+  padding-top: 5px !important;
 }
 
 .MoviePage .movie-page-header {
@@ -10,6 +10,12 @@
 .MoviePage .movie-page-header .ant-page-header-back {
   font-size: 20px;
   margin-right: 10px;
+  color: #177ddc;
+}
+
+.MoviePage .movie-page-header .ant-page-header-heading-title {
+  color: #177ddc;
+  font-size: 18px;
 }
 
 .MoviePage .custom-skeleton {
@@ -34,6 +40,7 @@
 .d-flex .desc-container .movie-title {
   letter-spacing: 1px;
   margin-bottom: 0;
+  font-weight: bold;
 }
 
 .d-flex .desc-container .ant-typography {
