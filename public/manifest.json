@@ -1,6 +1,7 @@
 {
   "short_name": "Trend Watch",
   "name": "Trend Watch Progressive Web App",
+  "description": "A Progressive Web Application that lists trending movies that are worth watching built with React and Workbox",
   "icons": [
     {
       "src": "favicon.ico",
