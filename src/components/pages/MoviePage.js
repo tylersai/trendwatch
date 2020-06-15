@@ -85,6 +85,11 @@ const MoviePage = ({match}) => {
                   {movie.popularity && <Descriptions.Item label="Popularity">
                       <Popularity>{movie.popularity}</Popularity>
                     </Descriptions.Item>}
+                  {movie.spoken_languages && movie.spoken_languages.length > 0 && <Descriptions.Item label="Spoken Languages">
+                    {
+                      movie.spoken_languages.map(lan => lan.name).join(", ")
+                    }
+                  </Descriptions.Item>}
                   {movie.genres && movie.genres.length > 0 && <Descriptions.Item label="Genres">
                     {
                       movie.genres.map(g => <Text code>{g.name}</Text>)
