@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
 import { Divider, List, Card, Typography, Tooltip, Input } from "antd";
-import { HeartOutlined, PlayCircleOutlined, DownloadOutlined, RiseOutlined } from "@ant-design/icons";
+import { HeartOutlined, PlayCircleOutlined, DownloadOutlined, RiseOutlined, AlignCenterOutlined } from "@ant-design/icons";
 import './HomePage.css';
 
 import axios from "axios";
@@ -64,6 +64,7 @@ const HomePage = () => {
       setData([]);
       document.title = "Trend Watch";
     }
+    setQuery(searchQuery);
   };
 
   const cardClicked = id => history.push(`/movie/${id}`);
@@ -71,7 +72,6 @@ const HomePage = () => {
   const goSearch = value => {
     const searchQuery = value ? value.trim():"";
     if(searchQuery) {
-      setQuery(searchQuery);
       searchData(searchQuery);
     }
   }
@@ -84,11 +84,19 @@ const HomePage = () => {
         style={{maxWidth:"600px", margin:"10px auto", display:"flex", borderRadius:"10px"}}
         onSearch={goSearch}
         placeholder="e.g. Harry Potter, Twilight, Titanic,..." />
-      <Divider orientation="center"><RiseOutlined/> Trending</Divider>
+
+        {
+          query ? (
+            <>
+              <Divider orientation="center"><AlignCenterOutlined/> Search Results</Divider>
+            </>
+          ): (<Divider orientation="center"><RiseOutlined/> Trending</Divider>)
+        }
+      
       <List
         loading={loading}
         grid={gridOptions}
-        dataSource={data}
+        dataSource={data.filter(m => m.poster_path)}
         renderItem={item => (
           <List.Item>
             <Card
