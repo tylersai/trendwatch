@@ -49,10 +49,6 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
-
-  useEffect(() => {
     if(!query) {
       fetchData();
     }

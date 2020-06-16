@@ -38,6 +38,10 @@
   display: block;
 }
 
+.d-flex .desc-container {
+  flex-grow: 1;
+}
+
 .d-flex .desc-container .movie-title {
   letter-spacing: 1px;
   margin-bottom: 0;
