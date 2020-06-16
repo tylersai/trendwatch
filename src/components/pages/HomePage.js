@@ -11,6 +11,7 @@ const HomePage = () => {
 
   const history = useHistory();
 
+  const [query, setQuery] =  useState("");
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
@@ -51,7 +52,29 @@ const HomePage = () => {
     fetchData();
   }, []);
 
+  const searchData = async (searchQuery) => {
+    setLoading(true);
+    try {
+      const res = await axios.get(`/search/movie?query=${encodeURIComponent(searchQuery)}`);
+      setLoading(false);
+      setData(res.data.results);
+      document.title = `Trend Watch \u2022 "${searchQuery}"`;
+    } catch (error) {
+      setLoading(false);
+      setData([]);
+      document.title = "Trend Watch";
+    }
+  };
+
   const cardClicked = id => history.push(`/movie/${id}`);
+
+  const goSearch = value => {
+    const searchQuery = value ? value.trim():"";
+    if(searchQuery) {
+      setQuery(searchQuery);
+      searchData(searchQuery);
+    }
+  }
 
   return (
     <div className="HomePage Page">
@@ -59,7 +82,7 @@ const HomePage = () => {
       <Input.Search 
         size="large"
         style={{maxWidth:"600px", margin:"10px auto", display:"flex", borderRadius:"10px"}}
-        onSearch={value => alert(value)}
+        onSearch={goSearch}
         placeholder="e.g. Harry Potter, Twilight, Titanic,..." />
       <Divider orientation="center"><RiseOutlined/> Trending</Divider>
       <List
