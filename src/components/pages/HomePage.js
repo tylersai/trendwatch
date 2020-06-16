@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { Divider, List, Card, Typography, Tooltip } from "antd";
+import { Divider, List, Card, Typography, Tooltip, Input } from "antd";
 import { HeartOutlined, PlayCircleOutlined, DownloadOutlined, RiseOutlined } from "@ant-design/icons";
 import './HomePage.css';
 
@@ -56,6 +56,11 @@ const HomePage = () => {
   return (
     <div className="HomePage Page">
       <h1 className="text-center">Discover New Movies</h1>
+      <Input.Search 
+        size="large"
+        style={{maxWidth:"600px", margin:"10px auto", display:"flex", borderRadius:"10px"}}
+        onSearch={value => alert(value)}
+        placeholder="e.g. Harry Potter, Twilight, Titanic,..." />
       <Divider orientation="center"><RiseOutlined/> Trending</Divider>
       <List
         loading={loading}
