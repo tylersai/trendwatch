@@ -52,6 +52,12 @@ const HomePage = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    if(!query) {
+      fetchData();
+    }
+  }, [query]);
+
   const searchData = async (searchQuery) => {
     setLoading(true);
     try {
@@ -91,7 +97,9 @@ const HomePage = () => {
               <Divider orientation="center"><AlignCenterOutlined/> Search Results</Divider>
               <div className="res-toolbar">
                 <Typography.Text type="secondary">Showing results for <strong>"{query.trim()}"</strong></Typography.Text>
-                <Button size="small" shape="round" danger><CloseCircleOutlined/> Clear</Button>
+                <Button size="small" shape="round" danger onClick={() => setQuery("")}>
+                  <CloseCircleOutlined/> Clear
+                </Button>
               </div>
             </>
           ): (<Divider orientation="center"><RiseOutlined/> Trending</Divider>)

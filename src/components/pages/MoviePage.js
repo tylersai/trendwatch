@@ -90,7 +90,7 @@ const MoviePage = ({match}) => {
                   </Descriptions.Item>}
                   {movie.genres && movie.genres.length > 0 && <Descriptions.Item label="Genres">
                     {
-                      movie.genres.map(g => <Text code>{g.name}</Text>)
+                      movie.genres.map(g => <Text key={g.id} code>{g.name}</Text>)
                     }
                   </Descriptions.Item>}
                 </Descriptions>
