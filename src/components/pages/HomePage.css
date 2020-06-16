@@ -16,6 +16,17 @@ img.poster {
   margin: auto;
 }
 
+.HomePage .res-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px 15px 10px;
+}
+
+.HomePage .res-toolbar strong {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 @media (hover: none) {
   .HomePage .custom-card:hover {
     border-color: rgba(23, 126, 222, 0.4);

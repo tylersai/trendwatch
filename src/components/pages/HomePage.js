@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { Divider, List, Card, Typography, Tooltip, Input } from "antd";
-import { HeartOutlined, PlayCircleOutlined, DownloadOutlined, RiseOutlined, AlignCenterOutlined } from "@ant-design/icons";
+import { Divider, List, Card, Typography, Tooltip, Input, Button } from "antd";
+import { HeartOutlined, PlayCircleOutlined, DownloadOutlined, RiseOutlined, AlignCenterOutlined, CloseCircleOutlined } from "@ant-design/icons";
 import './HomePage.css';
 
 import axios from "axios";
@@ -86,9 +86,13 @@ const HomePage = () => {
         placeholder="e.g. Harry Potter, Twilight, Titanic,..." />
 
         {
-          query ? (
+          query && query.trim() ? (
             <>
               <Divider orientation="center"><AlignCenterOutlined/> Search Results</Divider>
+              <div className="res-toolbar">
+                <Typography.Text type="secondary">Showing results for <strong>"{query.trim()}"</strong></Typography.Text>
+                <Button size="small" shape="round" danger><CloseCircleOutlined/> Clear</Button>
+              </div>
             </>
           ): (<Divider orientation="center"><RiseOutlined/> Trending</Divider>)
         }
