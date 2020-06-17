@@ -2,6 +2,13 @@
 **“Trend Watch”** is a PWA-enabled website for trending movies information and search movies in the movie database (TMDB) who owns the REST API used in this Front-end React PWA project. It can also be installed (add to home screen) as a standalone application on both desktop and mobile.<br />
 This is a React frontend web project and backend REST API is provided by [The Movie Database](http://themoviedb.org).<br/>
 
+## Configurations
+
+Before you run this project, sign up and get your own `Access Token (v4 auth)` from [TMDB](http://themoviedb.org) to call their API. For convenience, create environment variable file named `.env` and paste the following like so:<br/><br/>
+`REACT_APP_API_END_POINT=https://api.themoviedb.org/3`<br/>
+`REACT_APP_ACCESS_TOKEN=<YOUR_TMDB_ACESS_TOKEN>`<br/>
+`REACT_APP_POSTER_PATH=https://image.tmdb.org/t/p/w500`<br/><br/>
+
 ## Available Scripts
 
 In the project directory, you can run:
