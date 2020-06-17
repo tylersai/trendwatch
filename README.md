@@ -82,8 +82,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-<br />
+<br/><br/>
 ## LINKS
+
 Live Demo: [https://trendwatchpwa.netlify.app](https://trendwatchpwa.netlify.app)<br/>
 GitHub Repo: [https://github.com/thesaihan/trendwatch](https://github.com/thesaihan/trendwatch)<br/>
 LinkedIn: [https://linkedin.com/in/thesaihan](https://linkedin.com/in/thesaihan)<br/>
