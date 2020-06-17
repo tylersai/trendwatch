@@ -1,5 +1,5 @@
 # Trend Watch
-[**“Trend Watch”**](https://trendwatchpwa.netlify.app) is a PWA-enabled website for trending movies information and search movies in the movie database (TMDB) who owns the REST API used in this Front-end React PWA project. It can also be installed (add to home screen) as a standalone application on both desktop and mobile.<br />
+[**“Trend Watch”**](https://trendwatchpwa.netlify.app) is a PWA-enabled website for trending movies information and search movies in the movie database (TMDB) who owns the REST API used in this Front-end React PWA project. It can also be installed (add to home screen) as a standalone application on both desktop and mobile. Ant Design is used as UI library.<br />
 This is a React frontend web project and backend REST API is provided by [The Movie Database](http://themoviedb.org).<br/>
 
 ## Prerequisites
@@ -82,7 +82,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
-<br /> <br />
+<br />
 ## LINKS
 Live Demo: [https://trendwatchpwa.netlify.app](https://trendwatchpwa.netlify.app)<br/>
 GitHub Repo: [https://github.com/thesaihan/trendwatch](https://github.com/thesaihan/trendwatch)<br/>
