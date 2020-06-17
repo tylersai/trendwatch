@@ -46,7 +46,7 @@ function App() {
     if(process.env.NODE_ENV === 'production') {
       setTimeout(() => {
         console.log(deferredPrompt);
-        deferredPrompt && notification.info(notiConfig);
+        deferredPrompt && !window.matchMedia('(display-mode: standalone)').matches && notification.info(notiConfig);
       }, 5000);
     }
   }, [deferredPrompt, notiConfig]);
