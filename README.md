@@ -1,6 +1,12 @@
 # Trend Watch
-**“Trend Watch”** is a PWA-enabled website for trending movies information and search movies in the movie database (TMDB) who owns the REST API used in this Front-end React PWA project. It can also be installed (add to home screen) as a standalone application on both desktop and mobile.<br />
+[**“Trend Watch”**](https://trendwatchpwa.netlify.app) is a PWA-enabled website for trending movies information and search movies in the movie database (TMDB) who owns the REST API used in this Front-end React PWA project. It can also be installed (add to home screen) as a standalone application on both desktop and mobile.<br />
 This is a React frontend web project and backend REST API is provided by [The Movie Database](http://themoviedb.org).<br/>
+
+## Prerequisites
+`workbox-cli` is required to inject lists of static resources to be precached by tweaking the webpack config of React's CRA. `workbox-cli` comes into play in building process to inject our customized service worker file `sw.js`. If you just want to run the app as a non-PWA site, you don't need workbox. Install this globally via <br />
+`yarn global add workbox-cli` <br />
+or <br />
+`npm install -g workbox-cli` <br />
 
 ## Configurations
 
