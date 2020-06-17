@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Trend Watch
+**“Trend Watch”** is a PWA-enabled website for trending movies information and search movies in the movie database (TMDB) who owns the REST API used in this Front-end React PWA project. It can also be installed (add to home screen) as a standalone application on both desktop and mobile.<br />
+This is a React frontend web project and backend REST API is provided by [The Movie Database](http://themoviedb.org).<br/>
 
 ## Available Scripts
 
