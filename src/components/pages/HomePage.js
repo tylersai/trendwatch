@@ -71,10 +71,19 @@ const HomePage = () => {
 
   const cardClicked = id => history.push(`/movie/${id}`);
 
-  const goSearch = value => {
+  const getParent = node => {
+    if(!node.classList.contains("movie-search"))
+      return getParent(node.parentElement);
+    else
+      return node.firstChild;
+  };
+
+  const goSearch = (value, event) => {
     const searchQuery = value ? value.trim():"";
     if(searchQuery) {
       searchData(searchQuery);
+      let toBlur = getParent(event.target);
+      toBlur.blur();
     }
   }
 
@@ -83,6 +92,7 @@ const HomePage = () => {
       <h1 className="text-center">Discover New Movies</h1>
       <Input.Search 
         size="large"
+        className="movie-search"
         style={{maxWidth:"600px", margin:"10px auto", display:"flex", borderRadius:"10px"}}
         onSearch={goSearch}
         placeholder="e.g. Harry Potter, Twilight, Titanic,..." />
