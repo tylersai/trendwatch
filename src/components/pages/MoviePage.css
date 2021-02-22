@@ -23,6 +23,10 @@
   margin-top: 20px;
 }
 
+.MoviePage img.poster {
+  max-height: 300px;
+}
+
 .d-flex {
   display: flex;
   align-items: stretch;
@@ -69,17 +73,17 @@
   font-size: 16px;
 }
 
-@media (min-width:320px)  {
+@media (min-width: 320px) {
   .d-flex {
     flex-direction: column;
   }
 }
-@media (min-width:481px)  {
+@media (min-width: 481px) {
   .d-flex {
     flex-direction: column;
   }
 }
-@media (min-width:641px)  {
+@media (min-width: 641px) {
   .d-flex {
     flex-direction: row;
   }
