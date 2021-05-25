@@ -73,6 +73,17 @@
   font-size: 16px;
 }
 
+.MoviePage .genre-desc .ant-descriptions-item-content {
+  flex-wrap: wrap !important;
+}
+
+.MoviePage .genre-tag {
+  display: inline-block;
+  white-space: nowrap;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
 @media (min-width: 320px) {
   .d-flex {
     flex-direction: column;
