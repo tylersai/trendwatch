@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
 import { Divider, List, Card, Typography, Tooltip, Input, Button } from "antd";
 import {
   HeartOutlined,
@@ -14,10 +13,11 @@ import "./HomePage.css";
 import axios from "axios";
 import LoadableImg from "../ui/LoadableImg";
 
-const HomePage = () => {
-  const history = useHistory();
+const HomePage = ({ location, history }) => {
+  const query = location.search
+    ? decodeURIComponent(location.search.substr(3))
+    : "";
 
-  const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
 
@@ -40,13 +40,19 @@ const HomePage = () => {
     <DownloadOutlined key="download" onClick={stopOnActionIconClick} />,
   ];
 
-  const fetchData = async () => {
+  const fetchData = async (searchQuery = "") => {
     setLoading(true);
     try {
-      const res = await axios.get("/trending/movie/day");
+      const res = await axios.get(
+        searchQuery
+          ? `/search/movie?query=${encodeURIComponent(searchQuery)}`
+          : "/trending/movie/day"
+      );
       setLoading(false);
       setData(res.data.results);
-      document.title = "Trend Watch \u2022 Trending Movies";
+      document.title = `Trend Watch \u2022 ${
+        searchQuery ? `search "${searchQuery}"` : "Trending Movies"
+      }`;
     } catch (error) {
       setLoading(false);
       setData([]);
@@ -55,27 +61,8 @@ const HomePage = () => {
   };
 
   useEffect(() => {
-    if (!query) {
-      fetchData();
-    }
+    fetchData(query);
   }, [query]);
-
-  const searchData = async (searchQuery) => {
-    setLoading(true);
-    try {
-      const res = await axios.get(
-        `/search/movie?query=${encodeURIComponent(searchQuery)}`
-      );
-      setLoading(false);
-      setData(res.data.results);
-      document.title = `Trend Watch \u2022 "${searchQuery}"`;
-    } catch (error) {
-      setLoading(false);
-      setData([]);
-      document.title = "Trend Watch";
-    }
-    setQuery(searchQuery);
-  };
 
   const cardClicked = (id) => history.push(`/movie/${id}`);
 
@@ -88,9 +75,9 @@ const HomePage = () => {
   const goSearch = (value, event) => {
     const searchQuery = value ? value.trim() : "";
     if (searchQuery) {
-      searchData(searchQuery);
       let toBlur = getParent(event.target);
       toBlur.blur();
+      history.push(`/home?q=${encodeURIComponent(searchQuery)}`);
     }
   };
 
@@ -106,24 +93,25 @@ const HomePage = () => {
           display: "flex",
           borderRadius: "10px",
         }}
+        defaultValue={query}
         onSearch={goSearch}
         placeholder="e.g. Harry Potter, Twilight, Titanic,..."
       />
 
-      {query && query.trim() ? (
+      {query ? (
         <>
           <Divider orientation="center">
             <AlignCenterOutlined /> Search Results
           </Divider>
           <div className="res-toolbar">
             <Typography.Text type="secondary">
-              Showing results for <strong>"{query.trim()}"</strong>
+              Showing results for <strong>"{query}"</strong>
             </Typography.Text>
             <Button
               size="small"
               shape="round"
               danger
-              onClick={() => setQuery("")}
+              onClick={() => history.push("/home")}
             >
               <CloseCircleOutlined /> Clear
             </Button>
