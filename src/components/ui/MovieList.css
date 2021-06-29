@@ -1,0 +1,23 @@
+.MovieList .ant-card-cover {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.MovieList .custom-card {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.MovieList .custom-card:hover {
+  border-color: #177ddc;
+}
+
+img.poster {
+  margin: auto;
+}
+
+@media (hover: none) {
+  .MovieList .custom-card:hover {
+    border-color: rgba(23, 126, 222, 0.4);
+  }
+}

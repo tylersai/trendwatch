@@ -2,24 +2,6 @@
   padding-bottom: 25px !important;
 }
 
-.HomePage .ant-card-cover {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.HomePage .custom-card {
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.HomePage .custom-card:hover {
-  border-color: #177ddc;
-}
-
-img.poster {
-  margin: auto;
-}
-
 .HomePage .res-toolbar {
   display: flex;
   justify-content: space-between;
@@ -29,10 +11,4 @@ img.poster {
 
 .HomePage .res-toolbar strong {
   color: rgba(255, 255, 255, 0.85);
-}
-
-@media (hover: none) {
-  .HomePage .custom-card:hover {
-    border-color: rgba(23, 126, 222, 0.4);
-  }
 }

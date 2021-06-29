@@ -1,4 +1,4 @@
-@import '~antd/dist/antd.dark.css';
+@import "~antd/dist/antd.dark.css";
 
 .App .Page {
   padding: 25px 4vw 10px 4vw;
@@ -8,7 +8,7 @@
   color: #177ddc;
 }
 
-.HomePage .custom-card,
+.MovieList .custom-card,
 .App .ant-card-actions,
 .App .ant-divider-horizontal.ant-divider-with-text::before,
 .App .ant-divider-horizontal.ant-divider-with-text::after {

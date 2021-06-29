@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Divider, List, Card, Typography, Tooltip, Input, Button } from "antd";
+import { Divider, Typography, Input, Button } from "antd";
 import {
-  HeartOutlined,
-  PlayCircleOutlined,
-  DownloadOutlined,
   RiseOutlined,
   AlignCenterOutlined,
   CloseCircleOutlined,
 } from "@ant-design/icons";
 import "./HomePage.css";
+import MovieList from "../ui/MovieList";
 
 import axios from "axios";
-import LoadableImg from "../ui/LoadableImg";
 
 const HomePage = ({ location, history }) => {
   const query = location.search
@@ -20,25 +17,6 @@ const HomePage = ({ location, history }) => {
 
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
-
-  const { Paragraph } = Typography;
-  const gridOptions = {
-    gutter: 24,
-    xs: 2,
-    sm: 3,
-    md: 4,
-    lg: 5,
-    xl: 6,
-    xxl: 7,
-  };
-
-  const stopOnActionIconClick = (e) => e.stopPropagation();
-
-  const actionIcons = [
-    <HeartOutlined key="favourite" onClick={stopOnActionIconClick} />,
-    <PlayCircleOutlined key="play" onClick={stopOnActionIconClick} />,
-    <DownloadOutlined key="download" onClick={stopOnActionIconClick} />,
-  ];
 
   const fetchData = async (searchQuery = "") => {
     setLoading(true);
@@ -63,8 +41,6 @@ const HomePage = ({ location, history }) => {
   useEffect(() => {
     fetchData(query);
   }, [query]);
-
-  const cardClicked = (id) => history.push(`/movie/${id}`);
 
   const getParent = (node) => {
     if (!node.classList.contains("movie-search"))
@@ -123,39 +99,7 @@ const HomePage = ({ location, history }) => {
         </Divider>
       )}
 
-      <List
-        loading={loading}
-        grid={gridOptions}
-        dataSource={data.filter((m) => m.poster_path)}
-        renderItem={(item) => (
-          <List.Item>
-            <Card
-              hoverable
-              className="custom-card"
-              cover={<LoadableImg posterPath={item.poster_path} />}
-              bodyStyle={{ padding: "12px 8px" }}
-              actions={actionIcons}
-              onClick={() => cardClicked(item.id)}
-            >
-              <Card.Meta
-                title={
-                  <Tooltip placement="topLeft" color="blue" title={item.title}>
-                    {item.title}
-                  </Tooltip>
-                }
-                description={
-                  <Paragraph
-                    ellipsis={{ rows: 4 }}
-                    style={{ fontSize: "0.75rem" }}
-                  >
-                    {item.overview}
-                  </Paragraph>
-                }
-              />
-            </Card>
-          </List.Item>
-        )}
-      />
+      <MovieList loading={loading} data={data} />
     </div>
   );
 };
