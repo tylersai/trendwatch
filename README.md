@@ -86,8 +86,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ## LINKS
 
 Live Demo: [https://trendwatchpwa.netlify.app](https://trendwatchpwa.netlify.app)<br/>
-GitHub Repo: [https://github.com/thesaihan/trendwatch](https://github.com/thesaihan/trendwatch)<br/>
+GitHub Repo: [https://github.com/tylersai/trendwatch](https://github.com/tylersai/trendwatch)<br/>
 LinkedIn: [https://linkedin.com/in/thesaihan](https://linkedin.com/in/thesaihan)<br/>
 Medium: [https://medium.com/@thesaihan](https://medium.com/@thesaihan)<br/>
-Twitter: [@thesaihan](https://twitter.com/thesaihan)<br/>
-Instagram: [@thesaihan](https://instagram.com/thesaihan)<br/>
+Twitter: [@tylerthenoble](https://twitter.com/tylerthenoble)<br/>
+Instagram: [@tylerinouterspace](https://instagram.com/tylerinouterspace)<br/>
